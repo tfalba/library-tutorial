@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Project List</h1>
+  {% if project_list %}
+  <ul>
+    {% for project in project_list %}
+    <hr>
+      <li class='project-list'>
+        <p><strong>Title:</strong> <a href="{{ project.get_absolute_url }}"> {{ project.title }}</a></p>
+        <p>
+          {% load static %}
+          <img class='project-list-image' src="{% static project.primary_image_link %}" style="width:240px;"></p>
+          <!-- contains link to detail page -->
+        <p><strong>Brief Description:</strong> {{project.brief_description}}</p>
+        <p><strong>Languages Used:</strong> {{project.languages}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no projects to view.</p>
+  {% endif %} 
+{% endblock %}

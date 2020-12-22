@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ project.title }}</h1>
+  <p><a href="{{ project.github_repo }}">GitHub Repo</a></p>
+<!-- Make this an if pic exists -->
+  <p>
+    {% load static %}
+    <img class='project-list-image' src="{% static project.primary_image_link %}" style="width:340px;"></p>
+  <p><strong>Languages:</strong> {{ project.languages }}</p>
+  <p><strong>Summary:</strong> {{ project.summary }}</p>
+
+  <div>
+    <h4>Samples</h4>
+
+    {% for image in project.projectimage_set.all %}
+      <hr>
+      {% load static %}
+      <p><strong>Image</strong><img class='project-list-image' src= {{ image.link_to_image }}></p>
+      <hr>
+    {% endfor %}
+  </div>
+
+{% endblock %}
