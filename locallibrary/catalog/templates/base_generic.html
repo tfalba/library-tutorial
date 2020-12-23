@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles-copy.css' %}">
 </head>
 
 <body>
@@ -16,6 +16,7 @@
   {% load static %}
   <img src="{% static 'images/pexels-mentatdgt-1319854.jpg' %}" alt="UML diagram" style="width:355px;height:150px;">
   </div>
+
 
   <div class='container-fluid'>
     <div class='row'>
@@ -27,14 +28,14 @@
           <li><a href="{% url 'author' %}">All  authors</a></li>
           <li><a href="{% url 'projects' %}">Projects</a></li>
 
-          {% if user.is_authenticated %}
+          <!-- {% if user.is_authenticated %}
           <hr>
           <li>User: {{ user.get_username }}</li>
           <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
           {% else %}
           <hr>
           <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-          {% endif %} 
+          {% endif %}  -->
         </ul>
       {% endblock %}
 

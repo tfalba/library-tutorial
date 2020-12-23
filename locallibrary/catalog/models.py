@@ -126,7 +126,7 @@ class Project(models.Model):
 
 class ProjectImage(models.Model):
   project = models.ForeignKey('Project', on_delete=models.SET_NULL, null=True)
-  link_to_image = models.ImageField(upload_to = 'media')
+  link_to_image = models.ImageField(upload_to = 'images/')
 
   USE_OR_NOT = (
     ('y', 'Use'),

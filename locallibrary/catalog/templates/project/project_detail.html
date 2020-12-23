@@ -1,7 +1,11 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>{{ project.title }}</h1>
+  <!-- <p>{{ project.get_absolute_url }}</p> -->
+  <div class='row'>
+    <h1>{{ project.title }}</h1>
+    <h2><a href="{% url 'projects' %}">+++</a></h2>   
+  </div>
   <p><a href="{{ project.github_repo }}">GitHub Repo</a></p>
 <!-- Make this an if pic exists -->
   <p>
@@ -10,14 +14,15 @@
   <p><strong>Languages:</strong> {{ project.languages }}</p>
   <p><strong>Summary:</strong> {{ project.summary }}</p>
 
-  <div>
     <h4>Samples</h4>
+    <div style="display:flex; flex-wrap:wrap">
 
     {% for image in project.projectimage_set.all %}
-      <hr>
+      
       {% load static %}
-      <p><strong>Image</strong><img class='project-list-image' src= {{ image.link_to_image }}></p>
-      <hr>
+      <!-- <p><img class='project-list-image' src= {{ image.link_to_image.url }} style="height:280px;"></p> -->
+      <p><a href= "{{ image.link_to_image.url }}"><img class='project-list-image' src= {{ image.link_to_image.url }} style="height:280px;"></a></p>
+     
     {% endfor %}
   </div>
 

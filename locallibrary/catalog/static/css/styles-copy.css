@@ -52,6 +52,7 @@
   margin-bottom: 0;
 }
 
+
 .book-card {
   display: flex;
 }
@@ -59,3 +60,10 @@
 .book-summary {
   padding-left: 10px;
 }
+
+.project-list-image {
+  border: solid 2px;
+  padding: 5px;
+  margin: 5px;
+}
+

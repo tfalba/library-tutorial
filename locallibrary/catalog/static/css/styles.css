@@ -63,5 +63,7 @@
 
 .project-list-image {
   border: solid 2px;
+  padding: 5px;
+  margin: 5px;
 }
 
